@@ -32,3 +32,16 @@ const showCollection = (arr) => {
 };
 
 showCollection(collection);
+
+const findByArtist = (artist) => {
+  let foundArtist = [];
+  for (let i = 0; i < collection.length; i++) {
+    if (collection[i].artist === artist) {
+      foundArtist.push(collection[i]);
+    }
+  }
+  return foundArtist;
+};
+
+console.log(findByArtist("Dolly Parton"));
+console.log(findByArtist("Toby Keith"));
