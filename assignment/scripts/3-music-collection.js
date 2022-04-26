@@ -21,3 +21,14 @@ console.log(addToCollection("Stay Trippy", "Juicy J", "2013"));
 console.log(addToCollection("Reign in Blood", "Slayer", "1986"));
 
 console.log(collection);
+
+const showCollection = (arr) => {
+  console.log(arr.length);
+  for (item of arr) {
+    console.log(
+      `${item.title} by ${item.artist}, published in ${item.yearPublished}.`
+    );
+  }
+};
+
+showCollection(collection);
