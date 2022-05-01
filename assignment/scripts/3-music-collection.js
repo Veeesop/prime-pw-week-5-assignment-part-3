@@ -85,20 +85,43 @@ const findByArtist = (artist) => {
   return foundArtist;
 };
 
-console.log(findByArtist("Dolly Parton"));
-console.log(findByArtist("Toby Keith"));
+// console.log(findByArtist("Dolly Parton"));
+// console.log(findByArtist("Toby Keith"));
 
-function search(artist = "none", year = "none") {
+// function search(artist, year, trackName) {
+//   let searchResult = [];
+//   if (artist === undefined || year === undefined) {
+//     return (searchResult = collection);
+//   }
+//   searchResult = collection.filter(function (n) {
+//     return n.artist === artist && n.yearPublished === year;
+//   });
+//   return searchResult;
+// }
+
+function search(artist, year, trackName) {
+  let trackSearchResult = [];
+  let artistYearSearch = [];
   let searchResult = [];
-  if (artist === "none" || year === "none") {
+  if (artist === undefined || year === undefined || trackName === undefined) {
     return (searchResult = collection);
   }
-  searchResult = collection.filter(function (n) {
-    return n.artist === artist && n.yearPublished === year;
+  collection.filter(function (n) {
+    return (artistYearSearch = n.artist === artist && n.yearPublished === year);
   });
+  for (let i = 0; i < collection.length; i++) {
+    for (let j = 0; j < collection[i].tracks.length; j++) {
+      if (collection[i].tracks[j].trackName === trackName) {
+        return (trackSearchResult = collection[i]);
+      }
+    }
+  }
+  if (trackSearchResult === artistYearSearch) {
+    searchResult = artistYearSearch;
+  }
   return searchResult;
 }
 
-console.log(search("Dolly Parton", 1980));
-console.log(search("Toby Keith", 2020));
+console.log(search("Dolly Parton", 1980, "9 to 5"));
+console.log(search("Toby Keith", 2020, "I love this bar"));
 console.log(search());
