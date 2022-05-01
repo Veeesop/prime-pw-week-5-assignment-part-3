@@ -85,19 +85,8 @@ const findByArtist = (artist) => {
   return foundArtist;
 };
 
-// console.log(findByArtist("Dolly Parton"));
-// console.log(findByArtist("Toby Keith"));
-
-// function search(artist, year, trackName) {
-//   let searchResult = [];
-//   if (artist === undefined || year === undefined) {
-//     return (searchResult = collection);
-//   }
-//   searchResult = collection.filter(function (n) {
-//     return n.artist === artist && n.yearPublished === year;
-//   });
-//   return searchResult;
-// }
+console.log(findByArtist("Dolly Parton"));
+console.log(findByArtist("Toby Keith"));
 
 function search(artist, year, trackName) {
   let trackSearchResult = [];
@@ -122,6 +111,7 @@ function search(artist, year, trackName) {
   return searchResult;
 }
 
+console.log(search("Dolly Parton", 1980, "9 to 5"));
 console.log(search("Dolly Parton", 1980, "9 to 5"));
 console.log(search("Toby Keith", 2020, "I love this bar"));
 console.log(search());
